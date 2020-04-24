@@ -1,0 +1,14 @@
+1. What is the purpose of using sessions?
+
+		Answer: The purpose of sessions is to store a session of a user, using a user id that allows the user to stay logged in for as long as you set the maxAge for. 
+2. What does bcrypt do to help us store passwords in a secure manner.
+
+		Answer: Bcrypt helps us to store passwords in a secure manner by encrypting the password you pass to the library. We then store the encrypted password in the database to provide a sense of security for the user. 
+ 
+3. What does bcrypt do to slow down attackers?
+
+		Answer: In addition to encrypting user password, bcrypt also hashed the encrypted password. They hash it as many times as the developer desires. This makes it more difficult for hackers to decode the encoded password. 
+ 
+ 4.What are the three parts of the JSON Web Token?
+
+		Answer: The first part is the header that contains the algorithm and token type. The second part of the is called the payload which contains all the information you want to pass for the client and backend. The third part is the verifying signature that provides extra security for the user and makes it harder to reuse the token unless it is yours.  
