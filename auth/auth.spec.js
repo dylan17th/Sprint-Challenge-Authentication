@@ -4,6 +4,7 @@ const db = require('../database/dbConfig.js')
 
 describe('testing the /api/auth endpoints', ()=>{
     
+    
     describe('testing the GET / enpoint', ()=>{
         it('should return a status of 200', ()=>{
             return request(server)
@@ -25,11 +26,11 @@ describe('testing the /api/auth endpoints', ()=>{
         it('should return a status of 201', async ()=> {
             await request(server)
             .post('/api/auth/register')
-            .send({ username: 'dylan27', password: 'something'})
+            .send({ username: 'dylan100', password: 'something'})
             .then(res => {
                 expect(res.status).toBe(201);
             })
-            await db('users').where({username: 'dylan27'}).delete()
+            await db('users').where({username: 'dylan100'}).delete()
 
         })
         it('should return a the user information', ()=> {
@@ -42,7 +43,8 @@ describe('testing the /api/auth endpoints', ()=>{
     })
     
     describe('tesitng the POST / login endpoint', ()=>{
-        it('should return a status of 200', ()=> {
+        
+        it('should return a status of 200', async ()=> {
             return request(server)
             .post('/api/auth/login')
             .send({username: "dylan29", password: "something"})
