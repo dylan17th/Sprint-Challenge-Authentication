@@ -15,7 +15,7 @@ router.post('/register', (req, res) => {
   .then(userId => {
     Users.getUserById(userId[0])
     .then(user => {
-      res.status(201).json(user)
+      res.status(201).json({ message: 'user was created',user})
     })
     .catch(err => res.status(500).json({message: 'can not retrieve the user'}))
   })
