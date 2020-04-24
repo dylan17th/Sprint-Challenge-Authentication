@@ -29,7 +29,7 @@ describe('testing the /api/auth endpoints', ()=>{
             .then(res => {
                 expect(res.status).toBe(201);
             })
-            await db('users').where({username: 'dylan27'}).truncate()
+            await db('users').where({username: 'dylan27'}).delete()
 
         })
         it('should return a the user information', ()=> {
